@@ -17,6 +17,8 @@ export interface User {
   balanceAmount: number;
   investModels: Lottery[];
   transactions: Transaction[];
+  authenticationResponses?: any[];
+  bottomRefferals?: any[];
 }
 
 export interface UserForTable {
@@ -27,6 +29,7 @@ export interface UserForTable {
   upperReferralLogin: string;
   role?: string;
   createdAt: string;
+  ipAddress?: string | number;
 }
 
 export interface Lottery {

@@ -21,6 +21,15 @@ export const columnsUsers: GridColDef[] | any[] = [
       <div onClick={(e) => e.stopPropagation()}>{params.value}</div>
     ),
   },
+  {
+    field: "ipAddress",
+    headerName: "IP",
+    flex:1,
+    minWidth:200,
+    renderCell: (params) => (
+      <div onClick={(e) => e.stopPropagation()}>{params.value}</div>
+    ),
+  },
 
   // {
   //   field: "balanceAmount",

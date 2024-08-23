@@ -63,7 +63,7 @@ const UsersTable: React.FC = () => {
   return (
     <>
       <div
-        className="w-1/2 max-xl:w-2/3 max-lg:w-[80%] max-sm:w-full rounded-xl h-full flex flex-col"
+        className="w-full rounded-xl h-full flex flex-col"
         id="container-users"
       >
         <div className="flex gap-2 mb-4 w-full items-center justify-center px-2">

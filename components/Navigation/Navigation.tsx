@@ -43,6 +43,7 @@ export default function Navigation() {
       >
         <div className="flex items-center gap-4 max-lg:gap-1">
           <NavItem href="/menu/users">USERS</NavItem>
+          <NavItem href="/menu/random">RANDOM</NavItem>
           <NavItem href="/menu/withdraw">WITHDRAW</NavItem>
           <NavItem href="/menu/deposits">DEPOSITS</NavItem>
         </div>
@@ -72,6 +73,7 @@ export default function Navigation() {
             <SlClose onClick={() => setIsOpen(false)} />
           </div>
           <NavItem href="/menu/users">USERS</NavItem>
+          <NavItem href="/menu/random">RANDOM</NavItem>
           <NavItem href="/menu/withdraw">WITHDRAW</NavItem>
           <NavItem href="/menu/deposits">DEPOSITS</NavItem>
           <div className="mt-10"></div>

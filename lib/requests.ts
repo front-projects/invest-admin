@@ -71,81 +71,6 @@ export const getUserByLogin = async (login: string | number) => {
   }
 };
 
-export const getTopUsers = async (): Promise<TopUsers[] | undefined> => {
-  try {
-    const TOKEN = cookies().get("accessToken")?.value;
-    const response = await axios.get(API_URL + `details/gettop`, {
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    return undefined;
-  }
-};
-
-export const getLottery = async (): Promise<Lottery[] | undefined> => {
-  try {
-    const TOKEN = cookies().get("accessToken")?.value;
-    const response = await axios.get(API_URL + `details/tables`, {
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-      },
-    });
-
-    return response.data;
-  } catch (error) {
-    return undefined;
-  }
-};
-
-export const updateTopUser = async (
-  user: TopUsers,
-  userId: string | number
-) => {
-  try {
-    const TOKEN = cookies().get("accessToken")?.value;
-    const response = await axios.put(
-      API_URL + `details/settop/${userId}`,
-      user,
-      {
-        headers: {
-          Authorization: `Bearer ${TOKEN}`,
-        },
-      }
-    );
-    if (response.status == 200) {
-      return true;
-    }
-  } catch (error) {
-    return false;
-  }
-};
-
-export const updateLottery = async (
-  lottery: any,
-  lotteryId: string | number | undefined
-) => {
-  try {
-    const TOKEN = cookies().get("accessToken")?.value;
-    const response = await axios.put(
-      API_URL + `details/tables/${lotteryId}`,
-      lottery,
-      {
-        headers: {
-          Authorization: `Bearer ${TOKEN}`,
-        },
-      }
-    );
-    if (response.status == 200) {
-      return true;
-    }
-  } catch (error) {
-    return false;
-  }
-};
-
 export const getDeposits = async (): Promise<Deposit[] | undefined> => {
   try {
     const TOKEN = cookies().get("accessToken")?.value;
@@ -211,6 +136,7 @@ export const createTransaction = async (transaction: any, userId: any) => {
     return false;
   }
 };
+
 
 export const randomLottery = async (obj: any) => {
   try {
