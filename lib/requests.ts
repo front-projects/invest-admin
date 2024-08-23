@@ -133,6 +133,7 @@ export const createTransaction = async (transaction: any, userId: any) => {
       return true;
     }
   } catch (error) {
+    console.log(error)
     return false;
   }
 };
@@ -150,6 +151,7 @@ export const randomLottery = async (obj: any) => {
       return response.data;
     }
   } catch (error) {
+    console.log(error)
     return false;
   }
 };

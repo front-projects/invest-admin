@@ -28,7 +28,6 @@ const UserPage: FC<UserPageProps> = async ({ params }) => {
   const groupedTransactions = groupTransactionsByDate(
     user ? user.transactions : []
   );
-  console.log(user);
 
   return (
     <section className="w-full h-full flex justify-center">
@@ -98,14 +97,8 @@ const UserPage: FC<UserPageProps> = async ({ params }) => {
                 </span>
               </div>
 
-              <ShowSessions sessions={user.authenticationResponses}/>
-              {/* {
-      id: 74,
-      ipAddress: '146.120.225.199',
-      accessToken: 'eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYWRtaW4iLCJleHAiOjE3MjQ0MjQ2NjIsImlhdCI6MTcyNDQxNzQ2Miwic2NvcGUiOiJBRE1JTiJ9.X1jyRJ-m_e6hfreM5Gk3R7nhrWpZ00xPN_cNAjNpPPpM01vOzv9meuIbl_fSX8sIYDXv1XCgWaKBM17RZbJvOQ',
-      refreshToken: null,
-      createdAt: '2024-08-23T12:51:02.8974'
-    } */}
+              <ShowSessions sessions={user.authenticationResponses ? user.authenticationResponses.reverse() : []}/>
+             
               <div className="mt-4">
                 <span className="text-gray-400 font-[400] text-lg">
                   Transactions:
