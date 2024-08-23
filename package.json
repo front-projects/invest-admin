@@ -1,0 +1,45 @@
+{
+  "name": "whale-admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@gsap/react": "^2.1.1",
+    "@mui/material": "^5.16.4",
+    "@mui/styled-engine": "^5.16.4",
+    "@mui/x-data-grid": "^7.11.0",
+    "axios": "^1.7.2",
+    "date-fns": "^3.6.0",
+    "dayjs": "^1.11.12",
+    "gsap": "^3.12.5",
+    "jose": "^5.6.3",
+    "mui": "^0.0.1",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1",
+    "react-select": "^5.8.0",
+    "react-spinners": "^0.14.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
