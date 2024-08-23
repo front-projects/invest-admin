@@ -133,11 +133,10 @@ export const createTransaction = async (transaction: any, userId: any) => {
       return true;
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return false;
   }
 };
-
 
 export const randomLottery = async (obj: any) => {
   try {
@@ -151,7 +150,42 @@ export const randomLottery = async (obj: any) => {
       return response.data;
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return false;
+  }
+};
+
+export const updateUtil = async (obj: any) => {
+  try {
+    const TOKEN = cookies().get("accessToken")?.value;
+    const response = await axios.put(
+      API_URL + `utils/${obj.entityKey}/${obj.entityValue}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+        },
+      }
+    );
+    if (response.status == 200) {
+      return true;
+    }
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
+
+export const getUtils = async (): Promise<any> => {
+  try {
+    const TOKEN = cookies().get("accessToken")?.value;
+    const response = await axios.get(API_URL + `utils/all`, {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return undefined;
   }
 };

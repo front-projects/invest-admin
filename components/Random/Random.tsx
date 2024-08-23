@@ -25,6 +25,7 @@ export default function Random() {
   const submitHandler = async () => {
     setIsLoading(true);
     const response = await randomLottery(obj);
+    console.log(response)
     if (response) {
       setIsLoading(false);
       setSubmited(response);
@@ -61,7 +62,7 @@ export default function Random() {
               {submited.map((user: any) => (
                 <div>
                   {user.username} -{" "}
-                  {user.incomes[0].transactionAmount.toFixed(2)} $
+                  {user.income.transactionAmount.toFixed(2)} $
                 </div>
               ))}
             </div>
