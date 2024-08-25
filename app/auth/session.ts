@@ -16,7 +16,7 @@ import { NextResponse } from "next/server";
 //   redirect("/menu");
 // }
 export async function createSession(accessToken: string) {
-  const accessExpiresAt = new Date(Date.now() + 5 * 60 * 60 * 1000); // 5 годин
+  const accessExpiresAt = new Date(Date.now() + 2 * 60 * 60 * 1000); // 5 годин
   // const refreshExpiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 днів
 
   cookies().set("accessToken", accessToken, {

@@ -7,7 +7,7 @@ export const columnsDeposits: GridColDef[] | any[] = [
     { field: "address", headerName: "Adress", flex: 2, minWidth:400},
     { field: "currency", headerName: "Currency", flex: 1, minWidth:200},
     { field: "transactionAmount", headerName: "Amount", flex: 1, minWidth:200, renderCell: (params) => params.value.toFixed(2) + ' $' },
-    { field: "createdAt", headerName: "Date", flex: 1, minWidth:200, renderCell:(params) => dayjs(params.value).format('DD/MM/YYYY - hh:mm:ss')},
+    { field: "createdAt", headerName: "Date", flex: 1, minWidth:200, renderCell:(params) => dayjs(params.value).format('DD/MM/YYYY - HH:mm:ss')},
     
     // {
     //   field: "balanceAmount",

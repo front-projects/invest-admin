@@ -11,7 +11,7 @@ import { updateUtil } from "@/lib/requests";
 
 export default function Util({ util }: { util: any }) {
   const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [value, setValue] = useState(util.entityValue);
+  const [value, setValue] = useState<number>(util.isPercent ? (util.entityValue * 100).toFixed(2) : util.entityValue);
   const [updatedValue, setUpdatedValue] = useState(value);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -27,7 +27,7 @@ export default function Util({ util }: { util: any }) {
     setLoading(true);
     const response = await updateUtil({
       entityKey: util.entityKey,
-      entityValue: updatedValue,
+      entityValue: util.isPercent ? updatedValue/100 : updatedValue,
     });
     setLoading(false);
     if (response) {
@@ -41,7 +41,7 @@ export default function Util({ util }: { util: any }) {
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setUpdatedValue(parseFloat(e.target.value));
-
+  
   return (
     <div
       onClick={handleEdit}
@@ -57,7 +57,7 @@ export default function Util({ util }: { util: any }) {
             step="0.01"
             autoFocus
           />
-        ) : value}
+        ) : value + ` ${util.isPercent ? "%" : ""}`}
       </div>
       {isEditing ? (
         !loading ? (

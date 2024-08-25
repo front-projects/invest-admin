@@ -15,11 +15,11 @@ export default function ShowSessions({ sessions }: { sessions: any }) {
       {show &&
         sessions.map((session: any) => {
           return (
-            <div className="text-[16px]">
+            <div className="text-[16px]" key={session.createdAt + session.ipAddress}>
               <span className="text-gray-400 font-[300]"> IP: </span>
               {session.ipAddress}
               <span className="text-gray-400 font-[300]"> TIME: </span>
-              {dayjs(session.createdAt).format("hh:mm:ss - DD/MM/YYYY")}
+              {dayjs(session.createdAt).format("HH:mm:ss - DD/MM/YYYY")}
             </div>
           );
         })}

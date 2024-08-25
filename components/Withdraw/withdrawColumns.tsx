@@ -24,7 +24,7 @@ export const columnsDeposits: GridColDef[] | any[] = [
     field: "createdAt",
     headerName: "Date",
     minWidth: 200,
-    renderCell: (params) => dayjs(params.value).format("hh:mm:ss - DD/MM/YYYY"),
+    renderCell: (params) => dayjs(params.value).format("HH:mm:ss - DD/MM/YYYY"),
   },
   {
     field: "withdrawStatus",

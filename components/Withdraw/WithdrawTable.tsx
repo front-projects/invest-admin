@@ -33,7 +33,6 @@ const WithdrawTable: React.FC = () => {
     setError(false);
     try {
       const fetchedWithdraw = await getWithdraw();
-      console.log(fetchedWithdraw)
       if (!fetchedWithdraw) {
         setError(true);
       } else {
