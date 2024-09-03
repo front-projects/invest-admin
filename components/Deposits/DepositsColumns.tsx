@@ -3,9 +3,10 @@ import dayjs from "dayjs";
 
 export const columnsDeposits: GridColDef[] | any[] = [
   //   { field: "id", headerName: "ID", minWidth: 140 },
-  { field: "contactEmail", headerName: "Email", minWidth: 260, flex: 1 },
+  
   { field: "transactionId", headerName: "ID", flex: 1, minWidth: 200 },
   { field: "address", headerName: "Adress", flex: 2, minWidth: 400 },
+  { field: "email", headerName: "Email", minWidth: 260, flex: 1 },
   { field: "currency", headerName: "Currency", flex: 1, minWidth: 200 },
   {
     field: "transactionAmount",
